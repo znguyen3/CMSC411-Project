@@ -1,0 +1,10 @@
+      | LI   | R1,100h
+      | LW   | R3,0(R1)
+      | LI   | R5,1
+      | LI   | R7,0h
+      | LI   | R6,1h
+LOOP: | MULT | R6,R5,R6
+      | ADD  | R7,R7,R6
+      | ADDI | R5,R5,1h
+      | BNE  | R5,R3,LOOP
+      | HLT  |
